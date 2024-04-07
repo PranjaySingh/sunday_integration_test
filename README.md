@@ -1,6 +1,7 @@
 # Sunday Integration Test Project.
 
- **Important :** _Once the project is cloned/ downloaded, please go to “Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_8_1.bundle.zip” and unzip/unpack the compressed bundle file before opening the unity project. I have reached my LFS data limit. Thus I am unable to track large files with git LFS._
+### **Important :** 
+ _Once the project is cloned/ downloaded, please go to “Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_8_1.bundle.zip” and unzip/unpack the compressed bundle file before opening the unity project. I have reached my LFS data limit. Thus I am unable to track large files with git LFS._
 <br />
 <br />
 __Unity Version :__ `2022.3.22f1`
