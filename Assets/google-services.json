@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "774717244256",
+    "project_id": "sunday-integration-task",
+    "storage_bucket": "sunday-integration-task.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774717244256:android:ef8ee51e744dea75fc5405",
+        "android_client_info": {
+          "package_name": "com.Sunday.IntegrationTestProject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf_jZgHUYuEXGqyCRP7s9KpGr9MzBDUsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
