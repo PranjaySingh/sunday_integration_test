@@ -1,7 +1,7 @@
 # Sunday Integration Test Project.
 
 #### **Important :** _Once the project is cloned/ downloaded, please go to “Assets/Firebase/Plugins/x86_64/FirebaseCppApp-11_8_1.bundle.zip” and unzip/unpack the compressed bundle file before opening the unity project. I have reached my LFS data limit. Thus I am unable to track large files with git LFS._
-<br></br>
+<br />
 __Unity Version :__ `2022.3.22f1`
 
 __Link to Test Task Problem :__ https://gitlab.com/alireza27/sunday-unity-integration-developer-test
@@ -17,7 +17,6 @@ __Link to Test Task Problem :__ https://gitlab.com/alireza27/sunday-unity-integr
 
     Another possible solution would be to simply remove the MyEventSystem assembly definition as it only contains a single script and creating an assembly definition for a single script is not very beneficial at least in this particular project.
 
-\
 #### Performance Issues:
  - __Issue:__ 
 Despite the game having minimal objects and scripts, performance issues persist on mobile devices.
@@ -27,7 +26,6 @@ Despite the game having minimal objects and scripts, performance issues persist 
 
     Another possible solution would be to simply attach the BallRoller.cs to the PlayerBall game object and then simply accessing the PlayerBall’s components using gameObject.GetComponent<>.
 
-\
 #### Frame Rate Dependency: 
  - __Issue:__ 
 Controls behave inconsistently depending on the frames per second (FPS) the game is running at.
@@ -35,7 +33,6 @@ Controls behave inconsistently depending on the frames per second (FPS) the game
  - __Solution:__
 Since `BallRoller.cs` uses physics and adds a torque to the player ball’s Rigidbody every frame in the Update method, this leads to the inconsistency of different resulting velocity of the player ball on devices with different fps. A simple fix for this is to use the `FixedUpdate` method instead of the Update method. FixedUpdate executes a fixed number of times in a certain time interval (50 times a second by default, this can be changed) rather than executing every frame. 
 
-\
 #### Git Repository: 
  - __Issue:__ 
 There are issues with the git repository as numerous irrelevant files are included in pushes.
