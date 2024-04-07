@@ -16,7 +16,7 @@ __Link to Test Task Problem :__ https://gitlab.com/alireza27/sunday-unity-integr
  `MyEventSystem.cs` was the one and only script placed inside an assembly Definition called `MyEventSystem.asmdef` and the assembly definition could not reference the GameAnalyticsSDK namespace. Simply placing the MyEventSystem.cs out of the assembly definition solved the issue.
 
     Another possible solution would be to simply remove the MyEventSystem assembly definition as it only contains a single script and creating an assembly definition for a single script is not very beneficial at least in this particular project.
-\
+
 \
 #### Performance Issues:
  - __Issue:__ 
@@ -26,7 +26,7 @@ Despite the game having minimal objects and scripts, performance issues persist 
  `BallRoller.cs` was trying to find the PlayerBall game object (`GameObject.Find(“PlayerBall”)`) in every frame update. Finding a GameObject in the scene every frame hinders the performance of the game. I fixed it by referencing the PlayerBall at the “Start” of the script and introduced a fail safe to only find the player ball in Update if the player ball looses the reference somehow.
 
     Another possible solution would be to simply attach the BallRoller.cs to the PlayerBall game object and then simply accessing the PlayerBall’s components using gameObject.GetComponent<>.
-\
+
 \
 #### Frame Rate Dependency: 
  - __Issue:__ 
@@ -34,7 +34,7 @@ Controls behave inconsistently depending on the frames per second (FPS) the game
 
  - __Solution:__
 Since `BallRoller.cs` uses physics and adds a torque to the player ball’s Rigidbody every frame in the Update method, this leads to the inconsistency of different resulting velocity of the player ball on devices with different fps. A simple fix for this is to use the `FixedUpdate` method instead of the Update method. FixedUpdate executes a fixed number of times in a certain time interval (50 times a second by default, this can be changed) rather than executing every frame. 
-\
+
 \
 #### Git Repository: 
  - __Issue:__ 
