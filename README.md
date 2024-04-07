@@ -19,6 +19,7 @@ __Link to Test Task Problem :__ https://gitlab.com/alireza27/sunday-unity-integr
 
     Another possible solution would be to simply remove the MyEventSystem assembly definition as it only contains a single script and creating an assembly definition for a single script is not very beneficial at least in this particular project.
 <br />
+
 #### Performance Issues:
  - __Issue:__ 
 Despite the game having minimal objects and scripts, performance issues persist on mobile devices.
@@ -28,6 +29,7 @@ Despite the game having minimal objects and scripts, performance issues persist 
 
     Another possible solution would be to simply attach the BallRoller.cs to the PlayerBall game object and then simply accessing the PlayerBall’s components using gameObject.GetComponent<>.
 <br />
+
 #### Frame Rate Dependency: 
  - __Issue:__ 
 Controls behave inconsistently depending on the frames per second (FPS) the game is running at.
@@ -35,6 +37,7 @@ Controls behave inconsistently depending on the frames per second (FPS) the game
  - __Solution:__
 Since `BallRoller.cs` uses physics and adds a torque to the player ball’s Rigidbody every frame in the Update method, this leads to the inconsistency of different resulting velocity of the player ball on devices with different fps. A simple fix for this is to use the `FixedUpdate` method instead of the Update method. FixedUpdate executes a fixed number of times in a certain time interval (50 times a second by default, this can be changed) rather than executing every frame. 
 <br />
+
 #### Git Repository: 
  - __Issue:__ 
 There are issues with the git repository as numerous irrelevant files are included in pushes.
@@ -43,6 +46,7 @@ There are issues with the git repository as numerous irrelevant files are includ
 To fix this, we should only commit and push the Assets and ProjectSettings folder to git. The other folders such as the Library folder, UserSettings folder contain data that Unity can easily regenerate and thus is not required to be pushed. The Library Folder should especially be avoided as it contains various data files that are larger than the accepted 100mb per file push limit in git. If in case you need to push larger files, it is recommended that you track them in git LFS i.e git Large File System.
 <br />
 <br />
+
 ## Bonus Issues
 
 #### Firebase Analytics Integration:
@@ -54,6 +58,7 @@ FireBase Is Integrated successfully.
 App Package Name : `com.Sunday.IntegrationTestProject`
 `FireBaseEvents.cs` contains the logic to send the “Start_Levelæ, “Fail_Level” and “Complete_Level” event logs to firebase
 <br />
+
 #### Level Management:
  - __Issue:__ 
 Adding and managing new levels within the project is challenging.
